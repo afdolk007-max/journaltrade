@@ -1,0 +1,490 @@
+/* ============================================
+   DEXORNIT DASHBOARD STYLES
+   ============================================ */
+
+.dashboard-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-header-bar {
+  margin-bottom: 20px;
+}
+
+.dashboard-header-bar h1 {
+  margin-bottom: 4px;
+}
+
+/* Charts Grid */
+.dashboard-charts-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+}
+
+.chart-card-main,
+.chart-card-donut {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.chart-card-main .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+.card-subtitle {
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.year-selector {
+  padding: 6px 26px 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  min-width: 84px;
+  background-color: var(--bg);
+}
+
+/* Chart Container */
+.chart-container {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Donut */
+.donut-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex: 1;
+  padding: 8px 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.donut-chart {
+  position: relative;
+  width: 160px !important;
+  height: 160px !important;
+  max-width: 160px !important;
+  max-height: 160px !important;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.donut-chart canvas {
+  width: 160px !important;
+  height: 160px !important;
+  max-width: 160px !important;
+  max-height: 160px !important;
+}
+
+.donut-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.donut-pct {
+  display: block;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.donut-label {
+  display: block;
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.donut-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   UNIFIED BREAKDOWN CARDS
+   ============================================ */
+
+.breakdowns-heading {
+  margin-top: 28px;
+}
+
+.breakdowns-heading h2 {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.breakdown-card {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 20px;
+}
+
+.breakdown-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 12px;
+  gap: 8px;
+}
+
+.breakdown-header-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.breakdown-title-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.breakdown-title-text .card-title {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.breakdown-title-text .card-subtitle {
+  font-size: 11.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+.breakdown-year-select-wrap {
+  width: 96px;
+  min-width: 96px;
+  flex-shrink: 0;
+}
+
+.breakdown-icon-pill {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.breakdown-icon-pill.primary {
+  background: var(--primary-lighter);
+  color: var(--primary);
+}
+
+.breakdown-icon-pill.teal {
+  background: var(--teal-lighter);
+  color: var(--teal-dark);
+}
+
+.breakdown-icon-pill.purple {
+  background: var(--purple-lighter);
+  color: var(--purple-dark);
+}
+
+.breakdown-icon-pill.amber {
+  background: var(--amber-lighter);
+  color: var(--amber-dark);
+}
+
+/* Breakdown List */
+.breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* 3-Column Grid for perfect row alignment across all widgets */
+.breakdown-item {
+  display: grid;
+  grid-template-columns: 1fr 60px 105px;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--bg);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.breakdown-item:hover {
+  background: var(--white);
+  border-color: var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Column 1: Entity Name & Counts */
+.breakdown-entity {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.breakdown-entity-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.breakdown-badge {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.breakdown-badge.highlight {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.breakdown-counts {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.count-pill {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  line-height: 1.3;
+}
+
+.count-pill.total {
+  background: var(--border-light);
+  color: var(--text-secondary);
+}
+
+.count-pill.win {
+  background: var(--teal-lighter);
+  color: var(--teal-dark);
+}
+
+.count-pill.loss {
+  background: var(--primary-lighter);
+  color: var(--primary-dark);
+}
+
+.pair-color-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-right: 2px;
+}
+
+.account-accent-bar {
+  width: 4px;
+  height: 16px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+
+/* Column 2: Center-aligned WinRate Ring */
+.breakdown-gauge-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.winrate-ring-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.winrate-ring-svg {
+  transform: rotate(-90deg);
+}
+
+.winrate-ring-text {
+  position: absolute;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+/* Column 3: Right-aligned PNL with fluid font scaling */
+.breakdown-pnl {
+  font-weight: 800;
+  font-size: 13.5px;
+  text-align: right;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.breakdown-pnl.positive {
+  color: var(--teal-dark);
+}
+
+.breakdown-pnl.negative {
+  color: var(--primary);
+}
+
+/* Fluid font scaling for large numbers */
+.breakdown-pnl.pnl-compact-sm {
+  font-size: 12px;
+}
+
+.breakdown-pnl.pnl-compact-xs {
+  font-size: 10.5px;
+}
+
+.breakdown-empty {
+  padding: 28px 12px;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .dashboard-charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .breakdown-year-select-wrap {
+    width: 92px;
+    min-width: 92px;
+  }
+
+  .breakdown-title-text .card-title {
+    font-size: 13.5px;
+  }
+
+  .breakdown-title-text .card-subtitle {
+    font-size: 10.5px;
+  }
+
+  .breakdown-item {
+    grid-template-columns: 1fr 50px 88px;
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .breakdown-badge {
+    font-size: 12px;
+  }
+
+  .breakdown-pnl {
+    font-size: 12px;
+  }
+
+  .breakdown-pnl.pnl-compact-sm {
+    font-size: 11px;
+  }
+
+  .breakdown-pnl.pnl-compact-xs {
+    font-size: 9.5px;
+  }
+
+  .winrate-ring-wrapper {
+    transform: scale(0.88);
+  }
+}
+
+@media (max-width: 420px) {
+  .breakdown-card {
+    padding: 14px 12px;
+  }
+
+  .breakdown-year-select-wrap {
+    width: 90px;
+    min-width: 90px;
+  }
+
+  .breakdown-item {
+    grid-template-columns: 1fr 44px 80px;
+    gap: 6px;
+    padding: 8px 6px;
+  }
+}

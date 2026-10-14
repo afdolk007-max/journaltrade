@@ -1,0 +1,52 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.badge-sm {
+  padding: 2px 8px;
+  font-size: 11px;
+}
+
+.badge-lg {
+  padding: 6px 14px;
+  font-size: 14px;
+}
+
+/* Variants */
+.badge-teal {
+  background: var(--teal-lighter);
+  color: var(--teal-dark);
+}
+
+.badge-coral {
+  background: var(--primary-lighter);
+  color: var(--primary-dark);
+}
+
+.badge-purple {
+  background: var(--purple-lighter);
+  color: var(--purple-dark);
+}
+
+.badge-amber {
+  background: var(--amber-lighter);
+  color: var(--amber-dark);
+}
+
+.badge-success-light {
+  background: var(--teal-lighter);
+  color: var(--teal-dark);
+}
+
+.badge-default {
+  background: var(--bg);
+  color: var(--text-secondary);
+}

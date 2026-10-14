@@ -1,0 +1,139 @@
+/* ============================================
+   HISTORY PAGE
+   ============================================ */
+
+.history-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.history-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Search */
+.search-box {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-input {
+  padding: 8px 12px 8px 36px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  background: var(--white);
+  width: 200px;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+  width: 240px;
+}
+
+/* Table */
+.history-table-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.history-table-card .data-table th,
+.history-table-card .data-table td {
+  padding: 12px 14px;
+}
+
+.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.sortable:hover {
+  color: var(--primary);
+}
+
+.sort-icon {
+  margin-left: 4px;
+  color: var(--primary);
+}
+
+.action-btns {
+  display: flex;
+  gap: 4px;
+}
+
+.action-btns .btn-ghost {
+  color: var(--text-muted);
+  padding: 6px;
+}
+
+.action-btns .btn-ghost:hover {
+  color: var(--primary);
+  background: var(--primary-lighter);
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 50px 20px;
+  color: var(--text-muted);
+  font-size: 15px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .history-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .history-actions {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .search-box {
+    flex: 1;
+  }
+
+  .search-input {
+    width: 100% !important;
+  }
+
+  .history-table-card .data-table th,
+  .history-table-card .data-table td {
+    padding: 10px 10px;
+    font-size: 12px;
+  }
+}

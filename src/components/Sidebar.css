@@ -1,0 +1,227 @@
+/* ============================================
+   SIDEBAR & MOBILE HEADER
+   ============================================ */
+
+/* Desktop / Tablet Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--white);
+  border-right: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  z-index: 200;
+  transition: width var(--transition-normal);
+  overflow: hidden;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  margin-bottom: 28px;
+  text-decoration: none;
+}
+
+.sidebar-logo-img {
+  height: 38px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.sidebar-link:hover {
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+.sidebar-link.active {
+  background: var(--primary);
+  color: var(--text-white);
+  box-shadow: 0 3px 10px rgba(249, 109, 109, 0.35);
+}
+
+.sidebar-link.active:hover {
+  background: var(--primary-dark);
+}
+
+.sidebar-link svg {
+  flex-shrink: 0;
+}
+
+.sidebar-link-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.sidebar-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--primary-lighter);
+  color: var(--primary-dark);
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.sidebar-cta-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.sidebar-lock-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.sidebar-lock-btn:hover {
+  background: var(--bg);
+  color: var(--primary);
+}
+
+.mobile-lock-btn {
+  color: var(--text-secondary);
+  padding: 6px;
+}
+
+.mobile-lock-btn:hover {
+  color: var(--primary);
+}
+
+/* Mobile Header (Fixed Top Bar) */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-light);
+  z-index: 150;
+  padding: 0 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.mobile-brand-logo-img {
+  height: 28px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+}
+
+.mobile-quick-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--primary);
+  color: white;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(249, 109, 109, 0.3);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.mobile-quick-add:active {
+  transform: scale(0.96);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .sidebar {
+    width: var(--sidebar-collapsed);
+    padding: 20px 8px;
+  }
+
+  .sidebar-logo-img {
+    max-width: 44px;
+    height: 32px;
+    object-position: left;
+  }
+
+  .sidebar-link-text {
+    display: none;
+  }
+
+  .sidebar-logo {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .sidebar-link {
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .sidebar-cta-btn {
+    padding: 10px 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none !important;
+  }
+
+  .mobile-header {
+    display: flex;
+  }
+}

@@ -1,0 +1,234 @@
+/* ============================================
+   PIN LOGIN / LOCK SCREEN STYLES
+   ============================================ */
+
+.login-page {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 20%, #FFF5F5 0%, #F8F9FA 70%, #F1F3F5 100%);
+  padding: 24px;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.login-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(249, 109, 109, 0.06);
+  padding: 36px 32px;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.login-logo {
+  height: 42px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.login-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.login-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* Expired Session Banner */
+.session-expired-banner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: var(--amber-lighter);
+  color: var(--amber-dark);
+  border: 1px solid var(--amber-light);
+  border-radius: var(--radius-md);
+  font-size: 11.5px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  line-height: 1.3;
+}
+
+/* 6-Digit PIN Boxes */
+.pin-display-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.pin-digit-box {
+  width: 44px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border);
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.pin-digit-box.active {
+  border-color: var(--primary);
+  background: var(--white);
+  box-shadow: 0 0 0 3px var(--primary-lighter);
+  transform: translateY(-2px);
+}
+
+.pin-digit-box.filled {
+  border-color: var(--primary-light);
+  background: var(--white);
+}
+
+.pin-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  animation: pulseDot 0.2s ease forwards;
+}
+
+@keyframes pulseDot {
+  0% { transform: scale(0.4); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Shake Animation on Error */
+.login-card.shake {
+  animation: shakeAnimation 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.pin-digit-box.error {
+  border-color: var(--primary);
+  background: var(--primary-bg);
+}
+
+@keyframes shakeAnimation {
+  10%, 90% { transform: translate3d(-2px, 0, 0); }
+  20%, 80% { transform: translate3d(4px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+  40%, 60% { transform: translate3d(6px, 0, 0); }
+}
+
+.login-error-msg {
+  color: var(--primary);
+  font-size: 12.5px;
+  font-weight: 700;
+  min-height: 20px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Numpad Keypad */
+.numpad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 280px;
+  margin-bottom: 20px;
+}
+
+.numpad-btn {
+  height: 52px;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border-light);
+  background: var(--white);
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.numpad-btn:hover {
+  background: var(--bg);
+  border-color: var(--primary-light);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.numpad-btn:active {
+  background: var(--primary-lighter);
+  transform: scale(0.96);
+}
+
+.numpad-btn.action-btn {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: var(--bg);
+}
+
+.numpad-btn.action-btn:hover {
+  background: var(--primary-lighter);
+  color: var(--primary-dark);
+}
+
+/* Security Badge */
+.login-security-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 28px 20px;
+    border-radius: var(--radius-lg);
+  }
+
+  .pin-digit-box {
+    width: 38px;
+    height: 46px;
+    font-size: 20px;
+  }
+
+  .numpad-grid {
+    gap: 8px;
+    max-width: 250px;
+  }
+
+  .numpad-btn {
+    height: 48px;
+    font-size: 18px;
+  }
+}
